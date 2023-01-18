@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prompt from "../components/Prompt";
+---
+
+<Layout title="Welcome to Astro.">
+    <div class="bg-gradient-to-t from-sky-50 to-blue-100 min-h-screen">
+        <Prompt client:load />
+    </div>
+</Layout>
