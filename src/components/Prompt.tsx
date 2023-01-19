@@ -1,26 +1,31 @@
 import { useState } from "react";
 
 const Prompt = () => {
-  const [query, setQuery] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState<string>("");
+  const [answer, setAnswer] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     // console.log("clicked");
     setLoading(true);
-    const resp = await fetch("/ask", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-    });
-    setLoading(false);
-    const data = await resp.json();
-    // console.log(data.answer);
-    setAnswer(data.answer);
-    setQuery("");
+    try {
+      const resp = await fetch("/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      });
+      const data = await resp.json();
+      // console.log(data.answer);
+      setAnswer(data.answer);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setQuery("");
+    }
   };
 
   return (
@@ -46,7 +51,7 @@ const Prompt = () => {
           ></textarea>
         </div>
         {answer && (
-          <div className="sm:w-[85%] min-h-[30vh] p-0.5 md:p-1">
+          <div className="sm:w-[85%] min-h-[30vh] p-1 md:p-2">
             <p className="text-center sm:break-words">{answer}</p>
           </div>
         )}
@@ -57,7 +62,7 @@ const Prompt = () => {
           className="btn btn-blue disabled:opacity-40 mt-5"
           disabled={!query.length || loading}
         >
-          {loading ? "Loading..." : "Submit"}
+          {loading ? "Loading..." : "Ask"}
         </button>
       </div>
     </div>
