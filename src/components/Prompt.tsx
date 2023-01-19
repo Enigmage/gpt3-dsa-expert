@@ -22,6 +22,7 @@ const Prompt = () => {
       setAnswer(data.answer);
     } catch (err) {
       console.error(err);
+      setAnswer("There was some error in fetching the response...");
     } finally {
       setLoading(false);
       setQuery("");
