@@ -15,7 +15,7 @@ export async function post({ request }: APIContext) {
     const body = await request.json();
     const answers = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `${myPrompt}${body.query}`,
+      prompt: `${myPrompt}\n Me:${body.query}`,
       temperature: 0.7,
       max_tokens: 250,
     });
