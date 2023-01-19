@@ -16,7 +16,9 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
+        <!---Add Navbar here-->
         <slot />
+        <!---Add Footer here-->
     </body>
 </html>
 <style is:global>
@@ -51,6 +53,9 @@ const { title } = Astro.props;
     }
     .btn-blue {
         @apply bg-blue-500 text-white;
+    }
+    .btn-zinc {
+        @apply bg-zinc-500 text-white;
     }
     .btn-blue:hover {
         @apply bg-blue-700;
