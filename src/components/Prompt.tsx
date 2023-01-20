@@ -1,7 +1,14 @@
 import { useState } from "preact/hooks";
 
+const queryExample = `def fib(n):
+    if n <= 1:
+        return n 
+    return fib(n - 1) + fib(n - 2)
+''''
+The time complexity of this function is`;
+
 const Prompt = () => {
-  const [query, setQuery] = useState<string>("");
+  const [query, setQuery] = useState<string>(`${queryExample}`);
   const [answer, setAnswer] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -48,12 +55,13 @@ const Prompt = () => {
             cols={32}
             rows={10}
             value={query}
-            placeholder="Explain this..."
+            placeholder="Start writing here..."
+            type="text"
             onInput={(e: any) => setQuery(e.target.value)}
           ></textarea>
         </div>
         {answer && (
-          <div class="sm:w-[75%] min-h-[30vh] px-2 md:px-3">
+          <div class="sm:w-[75%] min-h-[30vh] px-2 md:px-3 font-bold">
             <p class="text-center sm:break-words">{answer}</p>
           </div>
         )}

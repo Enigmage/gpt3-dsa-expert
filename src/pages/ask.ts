@@ -17,7 +17,7 @@ export async function post({ request }: APIContext) {
       model: "text-davinci-003",
       prompt: `${myPrompt}\n Me:${body.query}.`,
       temperature: 0.7,
-      max_tokens: 250,
+      max_tokens: 340,
     });
     const answer = answers.data.choices.pop();
     return new Response(JSON.stringify({ answer: answer?.text || "" }), {
