@@ -36,7 +36,8 @@ const Prompt = () => {
           Ask DSA Expert
         </h1>
         <p className="antialiased font-extralight sm:text-sm text-center px-5">
-          Got a coding problem? Ask Abbas - he's got the answers to all your tech-related questions, from Leetcode problems to CS fundamentals!
+          Got a coding problem? Ask Abbas - he's got the answers to all your
+          tech-related questions, from Leetcode problems to CS fundamentals!
         </p>
       </div>
       <div className="flex flex-col-reverse gap-2 justify-around items-center border-t border-solid border-black border-opacity-20 pt-3">
@@ -63,7 +64,7 @@ const Prompt = () => {
           className="btn btn-blue disabled:opacity-40 mt-5"
           disabled={!query.length || loading}
         >
-          {loading ? "Loading..." : "Ask"}
+          {loading ? "Fetching response..." : "Ask"}
         </button>
       </div>
     </div>

@@ -24,25 +24,17 @@ const { title } = Astro.props;
 <style is:global>
     @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap");
     :root {
-        /* --accent: 124, 58, 237; */
-        /* --accent-gradient: linear-gradient( */
-        /*     45deg, */
-        /*     rgb(var(--accent)), */
-        /*     #da62c4 30%, */
-        /*     white 60% */
-        /* ); */
         --white-gradient2: linear-gradient(
             to left top,
             rgba(255, 255, 255, 0.9),
             rgba(255, 255, 255, 0.5)
         );
     }
-    * {
-        margin: 0;
-        padding: 0;
+    body {
         font-family: "Manrope", system-ui, sans-serif;
         box-sizing: border-box;
-        /* font-weight: bold; */
+        margin: 0;
+        padding: 0;
     }
     code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
