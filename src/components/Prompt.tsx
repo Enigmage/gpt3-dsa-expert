@@ -30,19 +30,19 @@ const Prompt = () => {
   };
 
   return (
-    <div className="min-h-[70vh]">
+    <div>
       <div className="flex flex-col justify-center items-center pt-3 pb-5">
         <h1 className="antialiased font-semibold lg:text-3xl md:text-2xl sm:text-xl">
           Ask DSA Expert
         </h1>
-        <p className="antialiased font-extralight sm:text-sm text-center">
-          Having trouble solving leetcode problems? Don't worry, just ask!!
+        <p className="antialiased font-extralight sm:text-sm text-center px-5">
+          Got a coding problem? Ask Abbas - he's got the answers to all your tech-related questions, from Leetcode problems to CS fundamentals!
         </p>
       </div>
-      <div className="flex flex-col-reverse gap-3 justify-around items-center border-t border-solid border-black border-opacity-20 pt-3">
+      <div className="flex flex-col-reverse gap-2 justify-around items-center border-t border-solid border-black border-opacity-20 pt-3">
         <div className="">
           <textarea
-            className="min-h-[40vh] p-2 border border-solid border-x-black border-opacity-30 hover:border-black"
+            className="min-w-[45vw] min-h-[40vh] p-2 border border-solid border-x-black border-opacity-30 hover:border-black"
             name="query-box"
             cols={32}
             rows={10}
@@ -52,7 +52,7 @@ const Prompt = () => {
           ></textarea>
         </div>
         {answer && (
-          <div className="sm:w-[85%] min-h-[30vh] p-1 md:p-2">
+          <div className="sm:w-[75%] min-h-[30vh] px-2 md:px-3">
             <p className="text-center sm:break-words">{answer}</p>
           </div>
         )}
