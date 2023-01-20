@@ -49,7 +49,7 @@ const Prompt = () => {
       <div class="flex flex-col-reverse gap-2 justify-around items-center border-t border-solid border-black border-opacity-20 pt-3">
         <div class="">
           <textarea
-            class="min-w-[45vw] min-h-[40vh] p-2 border border-solid border-x-black border-opacity-30 hover:border-black"
+            class="min-w-[45vw] min-h-[40vh] px-2 border border-solid border-x-black border-opacity-30 hover:border-black"
             name="query-box"
             cols={32}
             rows={10}
