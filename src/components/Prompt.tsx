@@ -17,7 +17,7 @@ const Prompt = () => {
     // console.log("clicked");
     setLoading(true);
     try {
-      const resp = await fetch("/ask", {
+      const resp = await fetch("/api/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

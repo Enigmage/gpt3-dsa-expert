@@ -1,6 +1,6 @@
 import type { APIContext } from "astro";
 import { Configuration, OpenAIApi } from "openai";
-import { presets } from "../utils/presets";
+import { presets } from "../../utils/presets";
 
 const myPrompt = presets.dsa;
 
